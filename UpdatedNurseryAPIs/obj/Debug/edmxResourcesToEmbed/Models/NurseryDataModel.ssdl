@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_a78ede_nurseryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="daily_report">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studies_homework" Type="ntext" Nullable="false" />
+    <Property Name="food" Type="ntext" Nullable="false" />
+    <Property Name="mood" Type="ntext" Nullable="false" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="kid_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KidImages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="ntext" Nullable="false" />
+    <Property Name="kid_id" Type="int" Nullable="false" />
+    <Property Name="created_on" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kids">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="age" Type="float" Nullable="false" />
+    <Property Name="phone1" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="phone2" Type="nchar" MaxLength="20" />
+    <Property Name="email" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="password" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="approve" Type="bit" Nullable="false" />
+    <Property Name="collected" Type="bit" Nullable="false" />
+    <Property Name="image" Type="ntext" />
+    <Property Name="date_of_birth" Type="date" Nullable="false" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="nursery_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="notification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="ntext" />
+    <Property Name="image" Type="ntext" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="nursery_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nursery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="address" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="website" Type="ntext" Nullable="false" />
+    <Property Name="facebook" Type="ntext" Nullable="false" />
+    <Property Name="logo" Type="ntext" Nullable="false" />
+    <Property Name="email" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SkillHubUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="ntext" Nullable="false" />
+    <Property Name="username" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="password" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="contact" Type="ntext" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="address" Type="ntext" Nullable="false" />
+    <Property Name="creaeted_on" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="ntext" Nullable="false" />
+    <Property Name="username" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="password" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="contact" Type="ntext" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="address" Type="ntext" Nullable="false" />
+    <Property Name="creaeted_on" Type="datetime" Nullable="false" />
+    <Property Name="nursery_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="db_a78ede_nurseryModelStoreContainer">
+    <EntitySet Name="daily_report" EntityType="Self.daily_report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KidImages" EntityType="Self.KidImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kids" EntityType="Self.Kids" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notification" EntityType="Self.notification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nursery" EntityType="Self.Nursery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SkillHubUser" EntityType="Self.SkillHubUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
